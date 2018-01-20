@@ -8,11 +8,11 @@
 > npm install
 
 
-#Dev server
+# Dev server
 > npm start
 
 open http://localhost:4200/
 
-#Build
+# Build
 
 > ng build --prod --build-optimizer
