@@ -3,7 +3,7 @@ export const CONFIG = {
 
     NETWORKS: {
       MAINNET: {
-        NODE: 'https://node1.smartholdem.io/api',
+        NODE: 'https://node0.smartholdem.io/api',
         NETHASH: 'fc46bfaf9379121dd6b09f5014595c7b7bd52a0a6d57c5aff790b42a73c76da7',
         CURRENCIES: ['STH'],
         KNOWN_ADDRESSES: {
