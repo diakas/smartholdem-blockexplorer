@@ -1,0 +1,28 @@
+<section *ngIf="account">
+  <div class="sth-section-title">
+    {{ 'ADDRESS.VOTERS_TITLE' | translate }}
+    <span class="sth-section-title-addition">
+      {{voters.length}}
+    </span>
+  </div>
+
+  <div class="sth-address-summary">
+    <div class="sth-summary sth-summary-delegate">
+      <div class="sth-summary-item sth-flex-between">
+        <span class="sth-summary-title">{{'GENERAL.INFO.DELEGATE' | translate}}</span>
+        <span class="sth-summary-data">{{account.delegate?.username}}</span>
+      </div>
+      <div class="sth-summary-item sth-flex-between">
+        <span class="sth-summary-title">{{'GENERAL.INFO.DELEGATE' | translate}} {{'GENERAL.INFO.ADDRESS' | translate}}</span>
+        <span class="sth-summary-data"><a [routerLink]="['/address', account.address]">{{account.address}}</a></span>
+      </div>
+    </div>
+  </div>
+
+  <sth-address-table *ngIf="areVotersVisible"
+                     [loadAccountsFunc]="getVoters"
+                     [supportsLoadAll]="true"
+                     [totalSupply]="totalVoteBalance"
+                     [supplyLabel]="'ADDRESS.VOTES_PERCENTAGE'">
+  </sth-address-table>
+</section>

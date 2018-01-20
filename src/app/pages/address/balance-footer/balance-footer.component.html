@@ -1,0 +1,6 @@
+<div class="sth-balance-footer" *ngIf="show">
+    <div class="sth-wrap sth-flex-center sth-flex-between">
+        <p class="sth-balance-address">{{address}}</p>
+        <p class="sth-balance-amount">{{ 'GENERAL.INFO.FINAL_BALANCE' | translate}} {{(balance / 100000000)*curVal | number: '1.2-2'}} {{curName}}</p>
+    </div>
+</div>

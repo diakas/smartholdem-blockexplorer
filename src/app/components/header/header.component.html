@@ -1,0 +1,52 @@
+<div class="fixed-header">
+    <div class="sth-wrap">
+        <header>
+            <a class="sth-logo" routerLink="/" (click)="closeMobileMenu()"></a>
+            <div class="sth-header-items sth-flex-center" [ngClass]="{'open': openMobileMenu}">
+                <div class="sth-search-wrap">
+                    <input class="sth-text-field sth-search-field" type="search" [(ngModel)]="searchQuery" placeholder="{{ 'HEADER.SEARCH' | translate}}" (keypress)="startSearch($event)" />
+                    <button class="sth-search-btn" type="submit" (click)="startSearch()"></button>
+                </div>
+
+                <nav class="sth-flex-center">
+                    <ul>
+                      <!--
+                        <sth-toggle-price-chart *ngIf="themeService.displayTogglePriceChartSwitch"></sth-toggle-price-chart>
+                        <li *ngIf="themeService.displayTogglePriceChartSwitch" class="sth-toggle-switch-spacer"></li>
+
+                        <sth-currency-dropdown [rates]="exchangeRate" (openMobMenu)="closeMobileMenu($event)"></sth-currency-dropdown>
+                      -->
+                        <sth-toggle-background></sth-toggle-background>
+                        <sth-tools-dropdown (openMobMenu)="closeMobileMenu($event)"></sth-tools-dropdown>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sth-menu-btn" (click)="showMobileMenu()"></div>
+        </header>
+        <div class="connection-message" *ngIf="!connection"><i class="fa fa-clock-o" aria-hidden="true"></i>Updating data. Please, wait or refresh this page in 15 seconds.</div>
+        <div class="sth-header-data sth-flex-center">
+            <div class="sth-data-item">
+                <span class="sth-item-index" *ngIf="headerHeight">
+                    <span class="sth-index-title"> {{ 'GENERAL.INFO.HEIGHT' | translate}}:</span>
+                    <span class="sth-index-data">{{headerHeight}}</span>
+                </span>
+                <span class="sth-item-index sth-item-nethash" *ngIf="headerNethash">
+                    <span class="sth-index-title"> {{ 'GENERAL.INFO.NETHASH' | translate}}:</span>
+                    <span class="sth-index-data">{{headerNethash}}</span>
+                </span>
+                <span class="sth-item-index" *ngIf="headerSupply">
+                    <span class="sth-index-title"> {{ 'GENERAL.INFO.SUPPLY' | translate}}:</span>
+                    <span class="sth-index-data">{{headerSupply}}</span>
+                </span>
+            </div>
+            <div *ngFor="let currency of currencies">
+                <div class="sth-data-item" *ngIf="currency.value">
+                    <span class="sth-item-index">
+                        <span class="sth-index-title"> STH/{{ currency.name }}:</span>
+                        <span class="sth-index-data">{{ currency.value | number: (currency.name === 'BTC' ? '1.8-8' : '1.2-2') }}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

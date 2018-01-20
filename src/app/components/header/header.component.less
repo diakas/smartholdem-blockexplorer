@@ -1,0 +1,186 @@
+@import "../../../assets/styles/_reset.less";
+@import "../../../assets/styles/_mixins.less";
+@import "../../../assets/styles/_variables.less";
+@import "../../../assets/styles/_fonts.less";
+@import "../../../assets/styles/_elements.less";
+@import "../../../assets/styles/_grid.less";
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+header {
+  height: 85px;
+  display:  flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 35px;
+  background: @light-header-bg;
+  position: relative;
+  z-index: 1;
+  .box-shadow(0 2px 14px 0 @box-shadow-color);
+  .sth-logo {
+    margin-right: 20px;
+    width: 120px;
+    height: 48px;
+    background: @logo-icon;
+    display: inline-block;
+  }
+  .sth-header-items {
+    width: 1024px;
+    justify-content: inherit;
+
+    li.sth-toggle-switch-spacer {
+      width: 1em;
+    }
+  }
+  nav {
+    display: inline-block;
+    font-size: 14px;
+    font-family: 'Avenir', serif;
+    font-weight: 900;
+    margin-left: 65px;
+  }
+
+  @media (max-width: @tablet) {
+    height: 60px;
+    // position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: @light-header-bg;
+    z-index: 3;
+    .sth-logo {
+      width: 60px;
+      height: 60px;
+    }
+    .sth-header-items {
+      text-align: center;
+      display: block;
+      background: @light-header-bg;
+      position: absolute;
+      top: 60px;
+      .box-shadow(1px 1px 1px 1px @color-gray-10);
+      left: -120%;
+      width: 100%;
+      .transition(all .5s);
+      padding: 10px;
+      &.open {
+        left: 0;
+      }
+      .sth-header-data {
+        margin: 0 auto;
+      }
+      nav {
+        display: block;
+        margin: 0;
+        ul {
+          li {
+            a {
+              line-height: 55px;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: @small-mobile) {
+  .sth-header-items {
+    box-sizing: border-box;
+      .sth-header-data {
+        display: block;
+        .sth-data-item {
+          font-size: 13px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+.sth-header-data {
+  font-size: 11px;
+  color: @light-body-color;
+  font-family: 'Comfortaa-Regular', serif;
+  align-items: center;
+  background: @light-subheader-bg;
+  height: 40px;
+  padding: 0 20px;
+  .sth-data-item {
+    .sth-item-nethash .sth-index-data {
+      text-transform: capitalize;
+    }
+    .sth-item-index {
+      margin-right: 30px;
+      overflow: hidden;
+      white-space: nowrap;
+      .sth-index-title {
+        font-family: 'Comfortaa-Bold', serif;
+        color: @light-subheader-label-color;
+      }
+      .sth-index-data {
+        color: @light-subheader-text-color;;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  @media (max-width: @small-mobile) {
+    height: auto;
+    padding: 10px 10px;
+    display: block;
+  }
+}
+
+.connection-message {
+  background: @color-gray-10;
+  text-align: center;
+  font-size: 13px;
+  font-family: 'Avenir', serif;
+  padding: 15px 0;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+:host-context(.dsth-theme) {
+  .connection-message {
+    background: @color-gray-80;
+  }
+  header {
+    background: @dsth-header-bg;
+    box-shadow: none;
+
+    @media (max-width: @tablet) {
+      background-color: @dsth-header-bg;
+      .sth-header-items {
+        background: @dsth-header-bg;
+        .box-shadow(1px 1px 1px 1px @color-gray-80);
+      }
+    }
+  }
+  .sth-wrap {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    -moz-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  }
+  .sth-header-data {
+    background: @dsth-subheader-bg;
+    color: @dsth-body-color;
+
+    .sth-data-item .sth-item-index .sth-index-title {
+      color: @dsth-subheader-label-color;
+    }
+    .sth-data-item .sth-item-index .sth-index-data {
+      color: @dsth-subheader-text-color;
+    }
+  }
+}

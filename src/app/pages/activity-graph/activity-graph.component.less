@@ -1,0 +1,120 @@
+@import "../../../assets/styles/_reset.less";
+@import "../../../assets/styles/_mixins.less";
+@import "../../../assets/styles/_variables.less";
+@import "../../../assets/styles/_fonts.less";
+@import "../../../assets/styles/_elements.less";
+@import "../../../assets/styles/_grid.less";
+
+.sth-section-title {
+  margin-bottom: 10px;
+}
+
+.graph-legend {
+  margin-top: 5px;
+}
+
+.sth-legent-block {
+    display: flex;
+  font-family: Avenir, serif;
+    margin: 50px 0;
+    .sth-legent-graph {
+      position: relative;
+      max-width: 800px;
+      .sth-legent-label {
+        font-size: 13px;
+        margin-bottom: 10px;
+        color: @light-table-text-color;
+      }
+
+      &:hover {
+        .sth-tooltip {
+          display: block;
+        }
+      }
+    }
+    .sth-legent-statistics {
+      width: 270px;
+      // margin: 0 auto;
+      .sth-statistics-header {
+        font-family: Avenir, serif;
+        font-size: 14px;
+        font-weight: 900;
+        margin-bottom: 9px;
+      }
+      .sth-statistics-item-data {
+        li {
+          color: @light-table-text-color;
+          border: 1px solid @light-table-bordered-border;
+          padding: 12px 15px;
+          margin-bottom: 10px;
+          font-size: 13px;
+        }
+      }
+    }
+    @media (max-width: @tablet) {
+      flex-wrap: wrap;
+      .sth-legent-graph {
+        max-width: 100%;
+      }
+      .sth-legent-statistics {
+        width: 300px;
+        margin: 0 auto;
+        .sth-statistics-item-data {
+          li {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    @media (max-width: @mobile) {
+      display: block;
+      margin: 25px 0;
+    }
+  }
+
+.sigma-graph-container {
+  flex: 1;
+  width: 100%;
+  min-width: 800px;
+  height: 500px;
+  border: 1px solid @light-table-bordered-border;
+  position: relative;
+  @media (max-width: @small-laptop) {
+    min-width: 700px;
+  }
+  @media (max-width: @tablet) {
+    min-width: 445px;
+  }
+  @media (max-width: @mobile) {
+    min-width: 100%;
+    height: 320px;
+  }
+}
+
+.sth-sigma-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:host-context(.dsth-theme) {
+  .sth-legent-block {
+    .sth-legent-graph .sth-legent-label {
+      color: @dsth-table-text-color;
+    }
+    .sth-legent-statistics {
+      .sth-statistics-item-data li {
+        color: @dsth-table-text-color;
+        border-color: @dsth-table-bordered-border;
+      }
+    }
+  }
+  .sigma-graph-container {
+    border-color: @dsth-table-bordered-border;
+  }
+}

@@ -1,0 +1,101 @@
+<section *ngIf="transaction">
+    <div class="sth-wrap">
+        <div class="sth-section-title">{{ 'TRANSACTION.TITLE' | translate }}</div>
+        <div class="sth-id-block">{{ 'TRANSACTION.ID' | translate }} {{transaction.id}}
+            <span class="sth-show-clipboard">
+                <i class="fa fa-clipboard copy-icon" aria-hidden="true" ngxClipboard [cbContent]="transaction.id"></i>
+                <span class="sth-tooltip sth-clipboard-tooltip">{{'GENERAL.COPY_CLIPBOARD' | translate}}</span>
+            </span>
+        </div>
+        <div class="sth-section-title">{{ 'TRANSACTION.SUMMARY_TITLE' | translate }}</div>
+        <div class="sth-address-summary">
+            <div class="sth-summary">
+                <div class="sth-summary-item sth-flex-between sth-flex-center">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.SENDER' | translate }}</span>
+                    <div class="sth-summary-data">
+                        <p *ngIf="transaction.senderDelegate"><a [routerLink]="getAddressLink(transaction.senderId)">{{transaction.senderDelegate.username}}</a></p>
+                        <p *ngIf="transaction.knownSender">{{transaction.knownSender.owner}} <span class="opacity">{{transaction.knownSender.description}}</span></p>
+                        <p *ngIf="!transaction.senderDelegate && !transaction.knownSender"><a [routerLink]="getAddressLink(transaction.senderId)">{{transaction.senderId}}</a></p>
+                    </div>
+                </div>
+                <div class="sth-summary-item sth-flex-between sth-flex-center" *ngIf="transaction.recipientId">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.RECIPIENT' | translate }}</span>
+                    <div class="sth-summary-data">
+                        <a [routerLink]="getAddressLink(transaction.recipientId)">{{transaction.recipientId}}</a>
+                    </div>
+                </div>
+                <div class="sth-summary-item sth-flex-between sth-flex-center" *ngIf="transaction.confirmations">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.CONFIRMATIONS' | translate }}</span>
+                    <div class="sth-summary-data">{{transaction.confirmations}}</div>
+                </div>
+                <div class="sth-summary-item sth-flex-between sth-flex-center" *ngIf="transaction.amount">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.AMOUNT' | translate }}</span>
+                    <div class="sth-summary-data">{{(transaction.amount / 100000000)*currencyValue | number: '1.2-8'}} <span class="opacity">{{currencyName}}</span></div>
+                </div>
+                <div class="sth-summary-item sth-flex-between sth-flex-center" *ngIf="transaction.fee">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.FEE' | translate }}</span>
+                    <div class="sth-summary-data">{{(transaction.fee / 100000000)*currencyValue | number: '1.2-8'}} <span class="opacity">{{currencyName}}</span></div>
+                </div>
+                <div class="sth-summary-item sth-flex-between sth-flex-center" *ngIf="transaction.timestamp">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.TIMESTAMP' | translate }}</span>
+                    <div class="sth-summary-data">{{transaction.timestamp | localDate | amDateFormat:'YYYY-MM-DD HH:mm:ss'}}</div>
+                </div>
+                <div class="sth-summary-item sth-flex-between sth-flex-center">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.VENDOR_FIELD' | translate }}</span>
+                    <div class="sth-summary-data">{{ transaction.vendorField }}</div>
+                </div>
+                <div class="sth-summary-item sth-flex-between sth-flex-center" *ngIf="transaction.blockid">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.BLOCK' | translate }}</span>
+                    <div class="sth-summary-data">
+                        <a [routerLink]="['/block', transaction.blockid]">{{transaction.blockid}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sth-section-title ">{{ 'TRANSACTION.DETAILS_TITLE' | translate }}</div>
+        <div class="sth-tab-body ">
+            <div class="sth-tab-item active " id="delegates-table ">
+                <table class="sth-table ">
+                    <thead>
+                        <tr>
+                            <th class="ellipsis width-15">{{ 'TRANSACTION.ID' | translate }}</th>
+                            <th class="ellipsis width-15">{{ 'GENERAL.INFO.DATE' | translate }}</th>
+                            <th class="ellipsis width-15">{{ 'GENERAL.INFO.SENDER' | translate }}</th>
+                            <th class="ellipsis width-15">{{ 'GENERAL.INFO.RECIPIENT' | translate }}</th>
+                            <th class="ellipsis width-15">{{ 'GENERAL.INFO.AMOUNT' | translate }}</th>
+                            <th class="ellipsis width-10">{{ 'GENERAL.INFO.FEE' | translate }}</th>
+                            <th class="ellipsis width-15">{{ 'GENERAL.INFO.CONFIRMATIONS' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ellipsis width-15 sth-tooltip-wrap" [ngClass]="{'sth-transaction': transaction.vendorField}">
+                                <a [routerLink]="['/tx', transaction.id]">{{transaction.id | overflowText}}</a>
+                                <span class="sth-tooltip" *ngIf="transaction.vendorField">{{ transaction.vendorField }}</span>
+                            </td>
+                            <td class="ellipsis width-15">{{transaction.timestamp | localDate | amDateFormat:'YYYY-MM-DD HH:mm:ss'}}</td>
+                            <td class="sth-blue-text ellipsis width-15">
+                                <a *ngIf="transaction.senderDelegate" [routerLink]="getAddressLink(transaction.senderId)">{{transaction.senderDelegate.username}}</a>
+                                <a *ngIf="!transaction.senderDelegate && transaction.knownSender" [routerLink]="getAddressLink(transaction.senderId)">{{transaction.knownSender.owner}}</a>
+                                <a *ngIf="!transaction.senderDelegate && !transaction.knownSender" [routerLink]="getAddressLink(transaction.senderId)">{{transaction.senderId | overflowText}}</a>
+                            </td>
+                            <td class="ellipsis width-15">
+                                <a [routerLink]="getAddressLink(transaction.recipientId)" *ngIf="!(transaction.asset && transaction.asset.votes || transaction.asset && transaction.asset.signature || transaction.asset && transaction.asset.delegate)">{{transaction.recipientId | overflowText}}</a>
+                                <span *ngIf="transaction.asset && transaction.asset.votes">{{ 'TRANSACTION.ASSET.VOTES' | translate }}</span>
+                                <span *ngIf="transaction.asset && transaction.asset.signature">{{ 'TRANSACTION.ASSET.SIGNATURE' | translate }}</span>
+                                <span *ngIf="transaction.asset && transaction.asset.delegate">{{ 'TRANSACTION.ASSET.DELEGATE' | translate }}</span>
+                            </td>
+                            <td class="sth-amount ellipsis width-15">{{(transaction.amount / 100000000)*currencyValue | number: '1.2-8'}} {{currencyName}}</td>
+                            <td class="ellipsis width-10">{{(transaction.fee / 100000000)*currencyValue | number: '1.2-8'}} {{currencyName}}</td>
+                            <td class="ellipsis width-15 sth-tooltip-wrap">
+                                <span *ngIf="transaction.confirmations <= 50">{{transaction.confirmations}}</span>
+                                <span *ngIf="transaction.confirmations > 50">{{ 'GENERAL.WELL_CONFIRMED' | translate }}</span>
+                                <span class="sth-tooltip" *ngIf="transaction.confirmations > 50">{{transaction.confirmations}} {{ 'GENERAL.INFO.CONFIRMATIONS' | translate }}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,52 @@
+@import "../../../../assets/styles/_reset.less";
+@import "../../../../assets/styles/_mixins.less";
+@import "../../../../assets/styles/_variables.less";
+@import "../../../../assets/styles/_fonts.less";
+@import "../../../../assets/styles/_elements.less";
+@import "../../../../assets/styles/_grid.less";
+
+.sth-balance-footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: @light-body-bg;
+    border-top: 1px solid @color-gray-10;
+    padding: 20px 0;
+    font-size: 13px;
+    font-family: 'Avenir', serif;
+    z-index: 3;
+
+    .sth-balance-address {
+        margin:0 20px;
+    }
+
+    .sth-balance-amount {
+        margin-right: 20px;
+        padding: 10px 15px;
+        background: #0b6f61;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    @media (max-width: @small-mobile) {
+      .sth-wrap {
+          flex-wrap: wrap;
+      }
+      .sth-balance-address {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 10px;
+      }
+      .sth-balance-amount {
+          width: 290px;
+          text-align: center;
+          margin: 0 auto;
+      }
+    }
+}
+
+:host-context(.dsth-theme) .sth-balance-footer {
+  background: @dsth-body-bg;
+  border-top-color: @color-gray-80;
+}

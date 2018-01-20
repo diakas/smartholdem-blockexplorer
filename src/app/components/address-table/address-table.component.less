@@ -1,0 +1,35 @@
+@import "../../../assets/styles/_variables.less";
+
+.top-loader {
+  margin: 20px 0 30px;
+}
+
+.sth-table {
+    margin-bottom: 20px;
+}
+
+@media (min-width: @small-mobile) {
+  .sth-two-buttons {
+    width: 520px;
+
+    & > div {
+      float: left;
+      width: 45%;
+      position: relative;
+
+      &:not(:first-child) {
+        margin-left: 5%;
+      }
+    }
+  }
+}
+
+@media (max-width: @small-mobile) {
+  .sth-two-buttons {
+    & > div {
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

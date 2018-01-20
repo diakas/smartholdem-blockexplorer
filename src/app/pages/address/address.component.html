@@ -1,0 +1,116 @@
+<section>
+    <div class="sth-wrap">
+        <div class="sth-section-title">{{ 'ADDRESS.TITLE' | translate }}</div>
+        <div class="sth-address-summary">
+            <div class="sth-summary" *ngIf="addressItem">
+                <div class="sth-summary-item sth-flex-between" *ngIf="addressItem.address">
+                    <span class="sth-summary-title sth-width-20">{{ 'GENERAL.INFO.ADDRESS' | translate }}</span>
+                    <span class="sth-summary-data">{{addressItem.address}}
+                      <span class="sth-show-clipboard">
+                        <i class="fa fa-clipboard copy-icon opacity" aria-hidden="true" ngxClipboard [cbContent]="addressItem.address"></i>
+                        <span class="sth-tooltip sth-clipboard-tooltip">{{ 'GENERAL.COPY_CLIPBOARD' | translate }}</span>
+                    </span>
+                    </span>
+                </div>
+                <div class="sth-summary-item sth-flex-between" *ngIf="addressItem.publicKey">
+                    <span class="sth-summary-title sth-width-20">{{ 'GENERAL.INFO.PUBLIC_KEY' | translate }}</span>
+                    <span class="sth-summary-data">{{addressItem.publicKey}}
+                        <span class="sth-show-clipboard">
+                        <i class="fa fa-clipboard copy-icon opacity" aria-hidden="true" ngxClipboard [cbContent]="addressItem.publicKey"></i>
+                        <span class="sth-tooltip sth-clipboard-tooltip">{{ 'GENERAL.COPY_CLIPBOARD' | translate }}</span>
+                    </span>
+                    </span>
+                </div>
+                <div class="sth-summary-item sth-flex-between" *ngIf="addressItem.balance" #balance>
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.TOTAL_BALANCE' | translate }}</span>
+                    <span class="sth-summary-data">{{(addressItem.balance / 100000000)*currencyValue | number: '1.2-2'}} <span class="opacity">{{currencyName}}</span></span>
+                </div>
+                <div class="sth-summary-item sth-flex-between">
+                    <span class="sth-summary-title">{{ 'GENERAL.INFO.TRANSACTIONS' | translate }}</span>
+                    <span class="sth-summary-data">
+                    <span class="sth-transaction-plus">{{addressItem.incoming_cnt}}</span>
+                    <span class="sth-transaction-minus">{{addressItem.outgoing_cnt}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="sth-qr" *ngIf="addressItem">
+                <div>
+                    <qr-code [value]="addressItem.address" [size]="150"></qr-code>
+                </div>
+                <div class="sth-qr-message ">({{ 'ADDRESS.SCAN' | translate }})</div>
+            </div>
+        </div>
+        <div *ngIf="addressItem && addressItem.delegate">
+            <div class="sth-section-title">{{ 'ADDRESS.DELEGATE_TITLE' | translate }} <span class="sth-section-title-addition">{{addressItem.delegate.username}}</span></div>
+            <div class="sth-address-summary">
+                <div class="sth-summary sth-summary-delegate">
+                    <div class="sth-summary-item sth-flex-between" *ngIf="addressItem.delegate.productivity">
+                        <span class="sth-summary-title">{{ 'GENERAL.INFO.UPTIME' | translate }}</span>
+                        <span class="sth-summary-data">{{addressItem.delegate.productivity}}%</span>
+                    </div>
+                    <div class="sth-summary-item sth-flex-between" *ngIf="addressItem.delegate.rate">
+                        <span class="sth-summary-title">{{ 'GENERAL.INFO.RANK' | translate }} / {{ 'GENERAL.INFO.STATUS' | translate }}</span>
+                        <span class="sth-summary-data">{{addressItem.delegate.rate}} / <span class="opacity">{{ 'GENERAL.ACTIVE' | translate }}</span></span>
+                    </div>
+                    <div class="sth-summary-item sth-flex-between" *ngIf="addressItem.delegate.approval">
+                        <span class="sth-summary-title">{{ 'GENERAL.INFO.APPROVAL' | translate }}</span>
+                        <span class="sth-summary-data">{{addressItem.delegate.approval}}% ({{(addressItem.delegate.approval / 100 * supply / 100000000)*currencyValue | number: '1.2-8'}} <span class="opacity">{{currencyName}}</span>)</span>
+                    </div>
+                    <div class="sth-summary-item sth-flex-between" *ngIf="addressItem.delegate.forged">
+                        <span class="sth-summary-title">{{ 'GENERAL.INFO.FORGED' | translate }}</span>
+                        <span class="sth-summary-data">{{(+addressItem.delegate.forged/100000000)*currencyValue | number: '1.2-2'}} <span class="opacity">{{currencyName}}</span></span>
+                    </div>
+                    <div class="sth-summary-item sth-flex-between" *ngIf="addressItem.delegate.producedblocks">
+                        <span class="sth-summary-title">{{ 'GENERAL.INFO.BLOCKS' | translate }}</span>
+                        <span class="sth-summary-data">{{addressItem.delegate.producedblocks}} <span class="opacity">({{addressItem.delegate.missedblocks}} {{ 'GENERAL.MISSED' | translate }})</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="addressItem && addressItem.votes && addressItem.votes.length">
+            <div class="sth-section-title">{{ 'ADDRESS.VOTES_TITLE' | translate }}</div>
+            <div class="sth-address-summary">
+                <div class="sth-summary sth-summary-delegate" *ngFor="let item of addressItem.votes">
+                    <div class="sth-summary-item sth-flex-between">
+                        <span class="sth-summary-title">{{item.username}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div *ngIf="addressItem && addressItem.voters && addressItem.voters.length">
+        <div class="sth-section-title">{{ 'ADDRESS.VOTERS_TITLE' | translate }} <span class="sth-section-title-addition">{{addressItem.voters.length}}</span></div>
+        <div class="sth-address-summary voters-container" [class.open]="areVotersExpanded" style="display: block;" #voters>
+          <i class="voters-button fa" [class.fa-plus-circle]="!areVotersExpanded" [class.fa-minus-circle]="areVotersExpanded" aria-label="false" (click)="areVotersExpanded = !areVotersExpanded"></i>
+          <span class="voters-address" *ngFor="let item of getVoters();">
+            <span>
+                    <a [routerLink]="['/address', item.address]">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        {{item.address}}
+                    </a>
+              </span>
+          </span>
+        </div>
+        <div class="sth-shadowbtn-wrap">
+          <button class="sth-shadow-btn" type="button" [routerLink]="['/address', addressItem.address, 'voters']">{{ 'ADDRESS.VOTER_DETAILS' | translate }}</button>
+          <div class="sth-shadowfor-btn"></div>
+        </div>
+      </div>
+        <div class="sth-section-title ">{{ 'ADDRESS.TX_TITLE' | translate }}</div>
+        <div class="sth-tab-header ">
+            <div class="sth-tab-header-item" [ngClass]="{'active': activeTab === 'all-tr'}" id="all-tr" (click)="getAllTransactions($event)">{{ 'GENERAL.TABS.ALL' | translate }}</div>
+            <div class="sth-tab-header-item " [ngClass]="{'active': activeTab === 'sent-tr'}" id="sent-tr" (click)="getSentTransactions($event)">{{ 'GENERAL.TABS.SENT' | translate }}</div>
+            <div class="sth-tab-header-item " [ngClass]="{'active': activeTab === 'received-tr'}" id="received-tr" (click)="getReceivedTransactions($event)">{{ 'GENERAL.TABS.RECEIVED' | translate }}</div>
+        </div>
+        <div class="sth-loader-block" *ngIf="showLoader">
+            <div class="sth-loader-icon"></div>
+            <p>{{ 'GENERAL.LOADING' | translate }}...</p>
+        </div>
+        <div class="empty-message" *ngIf="currentTransactions && currentTransactions.length === 0">{{ 'TRANSACTION.NO_TRANSACTIONS' | translate }}</div>
+        <div class="sth-tab-body " *ngIf="currentTransactions && currentTransactions.length > 0">
+            <div class="sth-tab-item active " id="delegates-table ">
+                <sth-address-transactions *ngIf="addressItem" [id]="addressItem.address" [items]="currentTransactions" [curName]="currencyName" [curValue]="currencyValue"></sth-address-transactions>
+            </div>
+        </div>
+    </div>
+    <sth-balance-footer *ngIf="addressItem" [show]="showBalanceFooter" [address]="addressItem.address" [balance]="addressItem.balance" [curName]="currencyName" [curVal]="currencyValue"></sth-balance-footer>
+</section>

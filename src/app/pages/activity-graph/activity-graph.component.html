@@ -1,0 +1,65 @@
+<section>
+    <div class="sth-wrap sth-section-wrap">
+        <div class="sth-section-title sth-topoffset-50">{{ 'ACTIVITY_GRAPH.TITLE' | translate}}</div>
+        <div class="sth-block-text sth-offset-bottom">{{ 'ACTIVITY_GRAPH.DESCRIPTION' | translate}}</div>
+        <div class="sth-section-title">{{ 'ACTIVITY_GRAPH.LEGEND_TITLE' | translate}}</div>
+        <div class="sth-block-text">{{ 'ACTIVITY_GRAPH.LEGEND_DESCRIPTION' | translate}}</div>
+        <div class="graph-legend">
+            <span class="sth-btn sth-account-btn">{{ 'ACTIVITY_GRAPH.LEGEND.ACCOUNT' | translate}}</span>
+            <span class="sth-btn sth-block-btn">{{ 'ACTIVITY_GRAPH.LEGEND.BLOCK' | translate}}</span>
+            <span class="sth-btn sth-tx-btn">{{ 'ACTIVITY_GRAPH.LEGEND.TX' | translate}}</span>
+            <span class="sth-btn sth-credit-btn">{{ 'ACTIVITY_GRAPH.LEGEND.CREDIT' | translate}}</span>
+            <span class="sth-btn sth-debit-btn">{{ 'ACTIVITY_GRAPH.LEGEND.DEBIT' | translate}}</span>
+        </div>
+        <div class="sth-legent-block sth-flex-between">
+            <div class="sth-legent-graph">
+                <div class="sth-legent-label">{{ 'ACTIVITY_GRAPH.UPDATE' | translate}}</div>
+                <div id="sigma-canvas" class="sigma-graph-container">
+                    <div class="sth-sigma-loader sth-loader-block" *ngIf="showLoader">
+                        <div class="sth-loader-icon"></div>
+                        <p>{{ 'GENERAL.LOADING' | translate }}...</p>
+                    </div>
+                    <!-- <div class="hud hud-loading">
+                        <div class="text-muted">
+                            <span>Loading Graph <i class="fa fa-spinner fa-spin"></i></span>
+                        </div>
+                    </div> -->
+                    <!-- <div class="hud hud-node">
+                        <div class="btn-group" role="group" aria-label="Node Buttons">
+                            <button type="button" class="btn btn-default btn-lg" (click)="remove()" title="Cancel/remove node selection"><span class="glyphicon glyphicon-remove-sign"></span></button>
+                            <a class="btn btn-default btn-lg" target="_new" role="button" title="Open selected node in block explorer"><span class="glyphicon glyphicon-new-window"></span></a>
+                        </div>
+                    </div> -->
+                </div>
+                <button class="sth-btn-camera" (click)="resetCamera()">{{ 'ACTIVITY_GRAPH.RESET_CAMERA' | translate}}</button>
+            </div>
+            <div class="sth-legent-statistics">
+                <div class="sth-statistics-header">{{ 'ACTIVITY_GRAPH.STATISTICS.TITLE' | translate}}</div>
+                <ul class="sth-statistics-item-data">
+                    <li class="sth-flex sth-flex-between">
+                        <div class="title">{{ 'ACTIVITY_GRAPH.STATISTICS.TXS' | translate}}</div>
+                        <div class="count">{{statistic.txs}}</div>
+                    </li>
+                    <li class="sth-flex sth-flex-between">
+                        <div class="title">{{ 'ACTIVITY_GRAPH.STATISTICS.VOLUME' | translate}}</div>
+                        <div class="count">{{statistic.volume * currencyValue}} <span class="opacity">{{currencyName}}</span></div>
+                    </li>
+                    <li class="sth-flex sth-flex-between">
+                        <div class="title">{{ 'ACTIVITY_GRAPH.STATISTICS.BLOCKS' | translate}}</div>
+                        <div class="count">{{statistic.blocks}}</div>
+                    </li>
+                    <li class="sth-flex sth-flex-between">
+                        <div class="title">{{ 'ACTIVITY_GRAPH.STATISTICS.TIMESPAN' | translate}}</div>
+                        <div class="count">{{statistic.end - statistic.beginning | amDuration:'seconds'}}</div>
+                    </li>
+                    <li class="sth-flex sth-flex-between">
+                        <div class="title">{{ 'ACTIVITY_GRAPH.STATISTICS.ACCOUNTS' | translate}}</div>
+                        <div class="count">{{statistic.accounts}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sth-section-title">{{ 'ACTIVITY_GRAPH.NAV_TITLE' | translate}}</div>
+        <div class="sth-block-text">{{ 'ACTIVITY_GRAPH.NAV_DESCRIPTION' | translate}}</div>
+    </div>
+</section>
