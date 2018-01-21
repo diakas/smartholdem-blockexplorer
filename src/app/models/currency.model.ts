@@ -3,7 +3,7 @@ export class CurrencyModel {
     value?: number;
 
     constructor() {
-        this.name = 'STH';
+        this.name = 'COINS';
         this.value = 1;
     }
 
