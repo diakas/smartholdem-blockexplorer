@@ -36,7 +36,7 @@
             <div *ngFor="let currency of currencies">
                 <div class="sth-data-item" *ngIf="currency.value">
                     <span class="sth-item-index">
-                        <span class="sth-index-title"> STH/{{ currency.name }}:</span>
+                        <span class="sth-index-title"> COINS/{{ currency.name }}:</span>
                         <span class="sth-index-data">{{ currency.value | number: (currency.name === 'BTC' ? '1.8-8' : '1.2-2') }}</span>
                     </span>
                 </div>
