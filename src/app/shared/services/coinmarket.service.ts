@@ -53,6 +53,7 @@ export class CoinmarketService {
     let categories = [];
     let currencyData = [];
     let chartSubtitle = '';
+    /*
     this.getData(param).subscribe(
       res => {
         categories = this.getTimeLine(res.Data, param);
@@ -129,11 +130,12 @@ export class CoinmarketService {
         this.chart = null;
       }
     );
+    */
   }
 
   public getData(param: string) {
     const date = Math.round(new Date().getTime() / 1000);
-    /*
+
     switch (param) {
       case 'day': {
         return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=24`)
@@ -175,7 +177,7 @@ export class CoinmarketService {
         break;
       }
     }
-    */
+
   }
 
   public getTimeLine(data: any, param: string) {
