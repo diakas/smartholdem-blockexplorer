@@ -141,11 +141,11 @@
             "TRANSACTIONS": "транзакции",
             "NEXT_FORGERS": "Следующие форжеры",
             "WAITING": "Ожидание следующих в",
-            "BEST_FORGER": "Лучший Форжер",
-            "SINCE_REGISTRATION": "форжинг с момента регистрации",
+            "BEST_FORGER": "Лучший Чеканщик",
+            "SINCE_REGISTRATION": " с момента регистрации",
             "BEST_PRODUCTIVITY": "Лучшая производительность",
             "WORST_PRODUCTIVITY": "Худшая производительность",
-            "FROM_START": "от начала"
+            "FROM_START": "от начала активации"
         },
         "VOTES_TITLE": "Последние Голоса",
         "TABS": {
