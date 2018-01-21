@@ -133,57 +133,49 @@ export class CoinmarketService {
 
   public getData(param: string) {
     const date = Math.round(new Date().getTime() / 1000);
+    /*
     switch (param) {
       case 'day': {
-        /*
         return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=24`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
-          */
       }
       case 'week': {
-        /*
         return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=168`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
-          */
       }
       case 'month': {
-        /*
         return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=720`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
-          */
       }
       case 'quarter': {
-        /*
         return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=2000`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
-          */
       }
       case 'year':
       case 'all': {
-        /*
         return this.http.get(`https://min-api.cryptocompare.com/data/histoday?fsym=COINS&tsym=USD&toTs=${date}&limit=365`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
-          */
       }
       default: {
         break;
       }
     }
+    */
   }
 
   public getTimeLine(data: any, param: string) {
