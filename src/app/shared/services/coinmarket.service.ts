@@ -111,7 +111,7 @@ export class CoinmarketService {
             enabled: false
           },
           series: [{
-            name: 'ARK/USD',
+            name: 'COINS/USD',
             data: currencyData,
             color: '#f0373c',
             animation: {
@@ -135,40 +135,50 @@ export class CoinmarketService {
     const date = Math.round(new Date().getTime() / 1000);
     switch (param) {
       case 'day': {
-        return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=ARK&tsym=USD&toTs=${date}&limit=24`)
+        /*
+        return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=24`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
+          */
       }
       case 'week': {
-        return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=ARK&tsym=USD&toTs=${date}&limit=168`)
+        /*
+        return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=168`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
+          */
       }
       case 'month': {
-        return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=ARK&tsym=USD&toTs=${date}&limit=720`)
+        /*
+        return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=720`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
+          */
       }
       case 'quarter': {
-        return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=ARK&tsym=USD&toTs=${date}&limit=2000`)
+        /*
+        return this.http.get(`https://min-api.cryptocompare.com/data/histohour?fsym=COINS&tsym=USD&toTs=${date}&limit=2000`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
+          */
       }
       case 'year':
       case 'all': {
-        return this.http.get(`https://min-api.cryptocompare.com/data/histoday?fsym=ARK&tsym=USD&toTs=${date}&limit=365`)
+        /*
+        return this.http.get(`https://min-api.cryptocompare.com/data/histoday?fsym=COINS&tsym=USD&toTs=${date}&limit=365`)
           .map((res: Response) => res.json())
           .catch((error: any) => {
             return Observable.throw(error.json());
           });
+          */
       }
       default: {
         break;
