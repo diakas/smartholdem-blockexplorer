@@ -26,7 +26,7 @@
             "DELEGATE": "Делегат",
             "FEE": "Комиссия",
             "FINAL_BALANCE": "Финальный баланс",
-            "FORGED": "Сфоржено",
+            "FORGED": "Добыто",
             "FORGING_TIME": "Время форжинга",
             "GENERATED_BY": "Генерирован",
             "HEIGHT": "Высота",
@@ -42,16 +42,16 @@
             "SENDER": "Отправитель",
             "SMARTEVENTS": "SmartEvents",
             "STATUS": "Статус",
-            "SUPPLY": "Выпущено",
+            "SUPPLY": "Всего монет",
             "TIME": "Время",
-            "TIMESTAMP": "Timestamp",
+            "TIMESTAMP": "Время",
             "TOTAL_AMOUNT": "Итого",
             "TOTAL_BALANCE": "Итоговый баланс",
             "TOTAL_FEE": "Общая комиссия",
-            "TOTAL_FORGED": "Всего сфоржено",
+            "TOTAL_FORGED": "Всего добыто",
             "TRANSACTION": "Транзакция",
             "TRANSACTIONS": "Транзакций",
-            "UPTIME": "Uptime",
+            "UPTIME": "Время",
             "VENDOR_FIELD": "Поле владельца",
             "VOTER": "Избиратель"
         },
@@ -128,7 +128,7 @@
         "STATUS": {
             "FORGING": "Добыто",
             "MISSING": "Потеряно",
-            "NOT_FORGING": "Not forging",
+            "NOT_FORGING": "Нет добычи",
             "AWAITING_SLOT": "В ожидании слота",
             "LAST_BLOCK": "Последний блок добыт"
         },
@@ -164,7 +164,7 @@
         "SEARCH": "Поиск блока, транзакции, адреса или делегата...",
         "TOOLS": {
             "TITLE": "Инструменты",
-            "SNAPSHOTS": "Snapshots"
+            "SNAPSHOTS": "Снимки"
         }
     },
     "FOOTER": {
