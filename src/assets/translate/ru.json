@@ -52,7 +52,7 @@
             "TRANSACTION": "Транзакция",
             "TRANSACTIONS": "Транзакций",
             "UPTIME": "Время",
-            "VENDOR_FIELD": "Поле владельца",
+            "VENDOR_FIELD": "GameChain",
             "VOTER": "Избиратель"
         },
         "BETWEEN": "между",
