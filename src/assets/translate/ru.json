@@ -64,73 +64,73 @@
         "BUTTON": "Смотреть Все Блоки"
     },
     "ADDRESS": {
-        "TITLE": "Address Summary",
+        "TITLE": "Сводка адреса",
         "SCAN": "Сканировать адрес",
         "DELEGATE_TITLE": "Делегат",
-        "VOTES_TITLE": "Votes",
-        "VOTERS_TITLE": "Voters",
-        "TX_TITLE": "Transactions",
-        "VOTES_PERCENTAGE": "% of votes",
-        "VOTER_DETAILS": "View Voter Details"
+        "VOTES_TITLE": "Голосов",
+        "VOTERS_TITLE": "Голосовавшие",
+        "TX_TITLE": "Транзакций",
+        "VOTES_PERCENTAGE": "% голосов",
+        "VOTER_DETAILS": "Просмотр сведений об избирателях"
     },
     "TRANSACTION": {
-        "TITLE": "Transaction",
-        "ID": "Transaction ID",
-        "SUMMARY_TITLE": "Summary",
-        "DETAILS_TITLE": "Details",
+        "TITLE": "Транзакция",
+        "ID": "ID Транзакции",
+        "SUMMARY_TITLE": "Сводка",
+        "DETAILS_TITLE": "Подробности",
         "ASSET": {
-            "VOTES": "Delegate vote",
-            "SIGNATURE": "Second signature creation",
-            "DELEGATE": "Delegate registration"
+            "VOTES": "Голоса Делегата",
+            "SIGNATURE": "Создание второй подписи",
+            "DELEGATE": "Регистрация Делегата"
         },
-        "NO_TRANSACTIONS": "There are no transactions involving this address"
+        "NO_TRANSACTIONS": "Нет транзакций с этим адресом"
     },
     "BLOCK": {
-        "TITLE": "Block",
-        "ID": "Block ID",
-        "SUMMARY_TITLE": "Summary",
-        "TX_TITLE": "Transactions",
-        "PREV_BLOCK": "Previous block"
+        "TITLE": "Блок",
+        "ID": "ID Блока",
+        "SUMMARY_TITLE": "Сводка",
+        "TX_TITLE": "Транзакции",
+        "PREV_BLOCK": "Предыдущий блок"
     },
     "BLOCK_LIST": {
-        "TITLE": "Blocks"
+        "TITLE": "Блоки"
     },
     "TOP_ACCOUNTS": {
         "TITLE": "Топ аккаунты"
     },
     "ACTIVITY_GRAPH": {
-        "TITLE": "Activity Graph",
-        "DESCRIPTION": "The following is a live graphical visualisation of the Smartholdem blockchain. Upon initialization only the latest block is shown. Subsequent blocks are added to the graph as they are forged by the network. After reaching a maximum of 20 blocks, the graph will automatically reset to the current block height and start again.",
-        "LEGEND_TITLE": "Legend",
-        "LEGEND_DESCRIPTION": "Use the following legend to help identify nodes and their corresponding interactions.",
-        "UPDATE": "Updated every 10 seconds.",
-        "RESET_CAMERA": "Reset Camera",
+        "TITLE": "График активности",
+        "DESCRIPTION": "Ниже приведена живая графическая визуализация блоков Smartholdem. При инициализации отображается только последний блок. Последующие блоки добавляются в график, поскольку они генерируются сетью. Достигнув максимум 20 блоков, график автоматически сбросится на текущую высоту блока и начнется снова.",
+        "LEGEND_TITLE": "Легенда",
+        "LEGEND_DESCRIPTION": "Используйте следующую легенду, чтобы идентифицировать узлы и их соответствующие взаимодействия.",
+        "UPDATE": "Обновляется каждые 10 секунд",
+        "RESET_CAMERA": "Сброс обзора",
         "LEGEND": {
-            "ACCOUNT": "Account",
-            "BLOCK": "Block",
+            "ACCOUNT": "Аккаунт",
+            "BLOCK": "Блок",
             "TX": "Tx",
-            "CREDIT": "Credit",
-            "DEBIT": "Debit"
+            "CREDIT": "Кредит",
+            "DEBIT": "Дебит"
         },
         "STATISTICS": {
-            "TITLE": "Statistics",
+            "TITLE": "Статистика",
             "TXS": "Txs",
-            "VOLUME": "Volume",
-            "BLOCKS": "Blocks",
-            "TIMESPAN": "Timespan",
-            "ACCOUNTS": "Accounts"
+            "VOLUME": "Значение",
+            "BLOCKS": "Блоки",
+            "TIMESPAN": "Промежуток времени",
+            "ACCOUNTS": "Аккаунты"
         },
         "NAV_TITLE": "Навигация",
-        "NAV_DESCRIPTION": "To zoom in and out, use the pinch-to-zoom motion on the trackpad/touchscreen or scroll the mouse wheel. To pan around the canvas tap/click and drag. Double tap/click on a node to focus onto it. Single tap/click on a node to inspect it."
+        "NAV_DESCRIPTION": "Чтобы увеличивать и уменьшать масштаб, используйте движение мыши. Чтобы панорамировать, нажмите / перетащите мышью. Дважды нажмите / щелкните на узле, чтобы сфокусироваться на нем. Одиночный щелчок / щелчок на узле, чтобы проверить его."
     },
     "DELEGATE_MONITOR": {
-        "TITLE": "Delegate Monitor",
+        "TITLE": "Мониторинг делегатов",
         "STATUS": {
-            "FORGING": "Forging",
-            "MISSING": "Missing",
+            "FORGING": "Добыто",
+            "MISSING": "Потеряно",
             "NOT_FORGING": "Not forging",
-            "AWAITING_SLOT": "Awaiting slot",
-            "LAST_BLOCK": "Last block forged"
+            "AWAITING_SLOT": "В ожидании слота",
+            "LAST_BLOCK": "Последний блок добыт"
         },
         "MONITOR": {
             "DELEGATES_TITLE": "Делегаты",
@@ -153,17 +153,17 @@
             "STANDBY": "Резервные Делегаты"
         },
         "STATUS_TABS": {
-            "FORGED": "Forged block recently",
-            "MISSED": "Missed block recently",
-            "NOT_FORGING": "Not forging",
-            "IN_QUEUE": "In queue for forging"
+            "FORGED": "Нидавно созданный блок",
+            "MISSED": "Нидавно потерянный блок",
+            "NOT_FORGING": "Нет ковки",
+            "IN_QUEUE": "В очереди на ковку"
         },
         "WAITING": "Ожидание делегатов"
     },
     "HEADER": {
         "SEARCH": "Поиск блока, транзакции, адреса или делегата...",
         "TOOLS": {
-            "TITLE": "Tools",
+            "TITLE": "Инструменты",
             "SNAPSHOTS": "Snapshots"
         }
     },
