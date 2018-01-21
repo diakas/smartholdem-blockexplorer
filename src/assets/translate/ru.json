@@ -120,7 +120,7 @@
             "TIMESPAN": "Timespan",
             "ACCOUNTS": "Accounts"
         },
-        "NAV_TITLE": "Navigation",
+        "NAV_TITLE": "Навигация",
         "NAV_DESCRIPTION": "To zoom in and out, use the pinch-to-zoom motion on the trackpad/touchscreen or scroll the mouse wheel. To pan around the canvas tap/click and drag. Double tap/click on a node to focus onto it. Single tap/click on a node to inspect it."
     },
     "DELEGATE_MONITOR": {
@@ -133,24 +133,24 @@
             "LAST_BLOCK": "Last block forged"
         },
         "MONITOR": {
-            "DELEGATES_TITLE": "Delegates",
-            "ACTIVE": "active delegates",
-            "STANDBY": "delegates on standby",
-            "LAST_BLOCK": "Last block by",
-            "FORGED_FROM": "forged from",
-            "TRANSACTIONS": "transactions",
-            "NEXT_FORGERS": "Next forgers",
-            "WAITING": "Waiting for next forgers",
-            "BEST_FORGER": "Best Forger",
-            "SINCE_REGISTRATION": "forged since registration",
-            "BEST_PRODUCTIVITY": "Best productivity",
-            "WORST_PRODUCTIVITY": "Worst productivity",
-            "FROM_START": "from the start"
+            "DELEGATES_TITLE": "Делегаты",
+            "ACTIVE": "активные делегаты",
+            "STANDBY": "делегаты в режиме ожидания",
+            "LAST_BLOCK": "Последний блок от",
+            "FORGED_FROM": "добыт из",
+            "TRANSACTIONS": "транзакции",
+            "NEXT_FORGERS": "Следующие форжеры",
+            "WAITING": "Ожидание следующих в",
+            "BEST_FORGER": "Лучший Форжер",
+            "SINCE_REGISTRATION": "форжинг с момента регистрации",
+            "BEST_PRODUCTIVITY": "Лучшая производительность",
+            "WORST_PRODUCTIVITY": "Худшая производительность",
+            "FROM_START": "от начала"
         },
-        "VOTES_TITLE": "Latest Votes",
+        "VOTES_TITLE": "Последние Голоса",
         "TABS": {
-            "ACTIVE": "Active Delegates",
-            "STANDBY": "Standby Delegates"
+            "ACTIVE": "Активные Делегаты",
+            "STANDBY": "Резервные Делегаты"
         },
         "STATUS_TABS": {
             "FORGED": "Forged block recently",
@@ -158,10 +158,10 @@
             "NOT_FORGING": "Not forging",
             "IN_QUEUE": "In queue for forging"
         },
-        "WAITING": "Waiting for delegates"
+        "WAITING": "Ожидание делегатов"
     },
     "HEADER": {
-        "SEARCH": "Find a block, transaction, address or delegate...",
+        "SEARCH": "Поиск блока, транзакции, адреса или делегата...",
         "TOOLS": {
             "TITLE": "Tools",
             "SNAPSHOTS": "Snapshots"
