@@ -16,7 +16,7 @@ export class AppComponent {
     private translate: TranslateService,
     private renderer: Renderer2
   ) {
-    translate.addLangs(['en', 'ua']);
+    translate.addLangs(['en', 'ua', 'ru']);
     translate.setDefaultLang('en');
 
     _themeService.isDarkThemeChange$.subscribe((data) => {
@@ -29,6 +29,6 @@ export class AppComponent {
     });
 
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|ua/) ? browserLang : 'en');
+    translate.use(browserLang.match(/en|ua|ru/) ? browserLang : 'en');
   }
 }
