@@ -135,7 +135,7 @@
         "MONITOR": {
             "DELEGATES_TITLE": "Делегаты",
             "ACTIVE": "активные делегаты",
-            "STANDBY": "делегаты в режиме ожидания",
+            "STANDBY": "делегаты в резерве",
             "LAST_BLOCK": "Последний блок от",
             "FORGED_FROM": "добыт из",
             "TRANSACTIONS": "транзакции",
