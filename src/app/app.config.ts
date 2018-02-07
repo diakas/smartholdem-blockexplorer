@@ -13,6 +13,7 @@ export const CONFIG = {
           "SZjrWHZncQpJjvHzGqrnMWcm5yCgYhMMvB" : "NODES FUND",
           "Sa9ikuhxMz6nWzAyqriiXSptgdwo2BwumP" : "POSTCOIN NODE",
           "STkW1XN3LGn8R3FStMpboNXZugDb6Aq67E" : "EXCHANGE FUND",
+          "SU1znm5azz52GUdvXf7r7RdcR667WMCLMf" : "COMMUNITY FUND",
         },
         PROPERTIES: [
           'DISABLE_PRICE_API',
