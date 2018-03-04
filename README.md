@@ -1,6 +1,8 @@
 
 [![Build Status](https://travis-ci.org/smartholdem/smartholdem-blockexplorer.svg?branch=mainnet)](https://travis-ci.org/smartholdem/smartholdem-blockexplorer)
 
+[![Build Status](https://github.com/smartholdem/smartmedia/blob/master/mediakit/sh_explorer.jpg)]
+
 # BlockExplorer SmartHoldem Gaming Platform
 
 
