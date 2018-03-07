@@ -5,19 +5,22 @@
 
 # BlockExplorer SmartHoldem Gaming Platform
 
-
-> git clone https://github.com/smartholdem/smartholdem-blockexplorer.git
-
-> cd smartholdem-blockexplorer 
-
-> npm install
-
+```shell
+git clone https://github.com/smartholdem/smartholdem-blockexplorer.git
+cd smartholdem-blockexplorer 
+npm install
+```
 
 # Dev server
-> npm start
+
+```shell
+npm start
+```
 
 open http://localhost:4200/
 
 # Build
 
-> ng build --prod --build-optimizer
+```shell
+ng build --prod --build-optimizer
+```
