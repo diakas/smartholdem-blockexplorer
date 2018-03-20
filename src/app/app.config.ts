@@ -8,7 +8,7 @@ export const CONFIG = {
         CURRENCIES: ['COINS'],
         KNOWN_ADDRESSES: {
           "SVx2j3NdZbDLfZ9HWS57NvqYg4c9grQLnx" : "BOUNTY",
-          "SUeGCt31AHwTZVcfZQwpPVL4jEUCtMMDTg" : "DEV FUND [frozen]",
+          "STQK9x2xzfM54n3cACrNahiq5CaWB2HwqR" : "DEV FUND",
           "SU32qNJaBFGBgWhzkhwfGN2nExXYhtDCXU" : "TOURNAMENT FUND",
           "SZjrWHZncQpJjvHzGqrnMWcm5yCgYhMMvB" : "NODES FUND",
           "STkW1XN3LGn8R3FStMpboNXZugDb6Aq67E" : "EXCHANGE FUND",
