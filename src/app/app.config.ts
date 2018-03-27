@@ -17,6 +17,17 @@ export const CONFIG = {
         PROPERTIES: [
           'DISABLE_PRICE_API',
         ],
+      },
+      DEVNET: {
+        NODE: 'https://nodedev.smartholdem.io/api',
+        NETHASH: '0f468f4142e681666483c0a1923c821c8dc0ab6724c26c880c51935d36b9c3d4',
+        CURRENCIES: ['DEV'],
+        KNOWN_ADDRESSES: {
+          "SUvkLFwWYjeuRggfU7j98r3vwRJ3s4wM44" : "GENESIS",
+        },
+        PROPERTIES: [
+          'DISABLE_PRICE_API',
+        ],
       }
     },
 };
