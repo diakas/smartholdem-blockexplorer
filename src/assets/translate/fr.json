@@ -53,7 +53,7 @@
           "TRANSACTION": "Transaction",
           "TRANSACTIONS": "Transactions",
           "UPTIME": "Uptime",
-          "VENDOR_FIELD": "Message",
+          "VENDOR_FIELD": "SmartMessage",
           "VOTER": "Électeur"
       },
       "BETWEEN": "entre",
