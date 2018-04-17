@@ -9,6 +9,7 @@ export const CONFIG = {
         KNOWN_ADDRESSES: {
           'SVx2j3NdZbDLfZ9HWS57NvqYg4c9grQLnx' : 'BOUNTY',
           'STQK9x2xzfM54n3cACrNahiq5CaWB2HwqR' : 'DEV FUND',
+          'SUeGCt31AHwTZVcfZQwpPVL4jEUCtMMDTg' : 'DEV FUND OLD',
           'SU32qNJaBFGBgWhzkhwfGN2nExXYhtDCXU' : 'TOURNAMENT FUND',
           'SZjrWHZncQpJjvHzGqrnMWcm5yCgYhMMvB' : 'NODES FUND',
           'STkW1XN3LGn8R3FStMpboNXZugDb6Aq67E' : 'EXCHANGE FUND',
