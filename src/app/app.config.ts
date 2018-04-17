@@ -20,10 +20,10 @@ export const CONFIG = {
       },
       DEVNET: {
         NODE: 'https://nodedev.smartholdem.io/api',
-        NETHASH: '0f468f4142e681666483c0a1923c821c8dc0ab6724c26c880c51935d36b9c3d4',
+        NETHASH: '3a6d2bec6798dedea99a1e6c64120a3876781b85e46bb75908aba07ffda61360',
         CURRENCIES: ['DEV'],
         KNOWN_ADDRESSES: {
-          'SUvkLFwWYjeuRggfU7j98r3vwRJ3s4wM44' : 'GENESIS',
+          'DBgBaNGaupUkxNWdcsUYybP9ayLmyxxBe8' : 'GENESIS',
         },
         PROPERTIES: [
           'DISABLE_PRICE_API',
