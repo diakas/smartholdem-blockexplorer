@@ -1,5 +1,5 @@
 export const CONFIG = {
-    NETWORK: 'MAINNET',
+    NETWORK: 'DEVNET',
 
     NETWORKS: {
       MAINNET: {
@@ -22,9 +22,10 @@ export const CONFIG = {
       DEVNET: {
         NODE: 'https://nodedev.smartholdem.io/api',
         NETHASH: '3a6d2bec6798dedea99a1e6c64120a3876781b85e46bb75908aba07ffda61360',
-        CURRENCIES: ['DEV'],
+        CURRENCIES: ['DSTH'],
         KNOWN_ADDRESSES: {
           'DBgBaNGaupUkxNWdcsUYybP9ayLmyxxBe8' : 'GENESIS',
+          'D5J8jXPEQai3oQJha3LFRH1U9i9Pp6W2PN' : 'DEV FAUCET'
         },
         PROPERTIES: [
           'DISABLE_PRICE_API',
