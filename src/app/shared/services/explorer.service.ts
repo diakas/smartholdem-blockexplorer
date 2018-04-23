@@ -4,7 +4,7 @@ import {BlockResponse, BlocksResponse} from '../../models/block.model';
 import {Delegate} from '../../models/delegate.model';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs/Rx';
 import { CONFIG } from '../../app.config';
 
 import 'rxjs/add/operator/map';
@@ -358,8 +358,8 @@ export class ExplorerService {
       })
       .flatMap(delegates => {
         let blockData = this._delegateLastBlockData.data;
-        let now = new Date();
-        let lastUpdatedDiff = Math.abs(this._delegateLastBlockData.lastUpdated.getTime() - now.getTime());
+        const now = new Date();
+        const lastUpdatedDiff = Math.abs(this._delegateLastBlockData.lastUpdated.getTime() - now.getTime());
         if (lastUpdatedDiff > this._updateForgedBlockFreqMS) {
           blockData = delegates.map(delegate => {
             return this
@@ -367,6 +367,7 @@ export class ExplorerService {
             .map((lastBlock: any) => {
               delegate.blocks = [lastBlock];
               delegate.blocksAt = lastBlock.timestamp;
+
 
               const delegateIndex = nextForgers.findIndex(d => d.publicKey === delegate.publicKey);
               delegate.forgingTime = delegateIndex * 8;
@@ -497,9 +498,9 @@ export class ExplorerService {
         }).reduce((a, b) => [...a, ...b]);
       })
       .flatMap((delegates: any[]) => {
-        let delegateList = {};
+        const delegateList = {};
         delegates.map(delegate => {
-          let delegateObj = new Delegate();
+          const delegateObj = new Delegate();
           Object.assign(delegateObj, delegate);
           delegateList[delegate.publicKey] = delegateObj;
         });
