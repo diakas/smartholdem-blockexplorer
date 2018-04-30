@@ -128,7 +128,7 @@
         "STATUS": {
             "FORGING": "Добыто",
             "MISSING": "Потеряно",
-            "NOT_FORGING": "Нет добычи",
+            "NOT_FORGING": "Нет ковки",
             "AWAITING_SLOT": "В ожидании слота",
             "LAST_BLOCK": "Последний блок"
         },
