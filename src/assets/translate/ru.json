@@ -26,7 +26,7 @@
             "DELEGATE": "Делегат",
             "FEE": "Комиссия",
             "FINAL_BALANCE": "Финальный баланс",
-            "FORGED": "Добыто",
+            "FORGED": "Ковка",
             "FORGING_TIME": "Время",
             "GENERATED_BY": "Генератор",
             "HEIGHT": "Высота",
@@ -126,7 +126,7 @@
     "DELEGATE_MONITOR": {
         "TITLE": "Монитор делегатов",
         "STATUS": {
-            "FORGING": "Добыто",
+            "FORGING": "Ковка",
             "MISSING": "Потеряно",
             "NOT_FORGING": "Нет ковки",
             "AWAITING_SLOT": "В ожидании слота",
